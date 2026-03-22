@@ -1,27 +1,29 @@
-# CLAUDE.md
+# Vue 開發規範
 
-## 需求需要建立檔案時參考以下路徑
+## 目錄結構
 
 ```
 src/
-├── apis/          # API endpoints and MSW mocks
-├── components/    # Reusable Vue components
-├── composables/   # Composition API utilities
-├── stores/        # Pinia state management
-├── views/         # Page components
-  ├─── home/
-      ├─── index.vue # basic file
-      ├─── components # this view use components
-      ├─── utils # this view use utils
-      ├─── types # this view use types
-      ├─── composables # this view use composables
-├── types/         # TypeScript type definitions
-├── utils/         # Utility functions
-└── plugins/       # Plugin configurations
+├── apis/           # API endpoints and MSW mocks
+├── components/     # Reusable Vue components
+├── composables/    # Composition API utilities
+├── stores/         # Pinia state management
+├── types/          # TypeScript type definitions
+├── utils/          # Utility functions
+├── plugins/        # Plugin configurations
+└── views/          # Page components
+    └── home/
+        ├── index.vue
+        ├── components/   # 此 view 專用元件
+        ├── composables/  # 此 view 專用 composables
+        ├── types/        # 此 view 專用型別
+        └── utils/        # 此 view 專用工具函式
 ```
 
 ## 基本規則
 
-- 與時間相關的需求，一率使用 date-fns 套件
-- 盡量避免使用 watch
-- 當 template 或者 script 在一個檔案內超過 300 行時，優先考慮拆分子組件
+- 時間處理一律使用 `date-fns`
+- 盡量避免使用 `watch`
+- 單一檔案的 `<template>` 或 `<script>` 超過 300 行時，優先拆分子組件
+- .vue 檔案建立時順序為，`<script>`、`<template>`、`<styles>`
+- 使用 tanstack-query 寫法時，參考 ./claude/skills/tanstack-vue-query Skill
