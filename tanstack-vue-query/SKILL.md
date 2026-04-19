@@ -271,3 +271,27 @@ const { data, isPending, isError, error } = usePost(postId);
 
 - 使用 `isPending` 而非 `isLoading`（`isLoading` 為舊版 API）
 - 不在元件內直接寫 `queryFn`，統一抽到 `apis/`
+
+#### `isPending` vs `isFetching`
+
+| 狀態 | 說明 |
+|------|------|
+| `isPending` | 僅初次載入（無快取資料）時為 `true` |
+| `isFetching` | 每次 fetch 都為 `true`，包含初次載入、搜尋、換頁、refetch |
+
+**列表頁有搜尋或分頁時，請用 `isFetching`**，否則搜尋過程中 table 不會顯示 loading：
+
+```vue
+<script setup lang="ts">
+// ❌ 搜尋/換頁時不會觸發 loading
+const { data, isPending } = usePosts(filters);
+
+// ✓ 每次 fetch 都會顯示 loading
+const { data, isFetching } = usePosts(filters);
+</script>
+
+<template>
+  <div v-if="isFetching">載入中...</div>
+  <PostList v-else :posts="data?.items" />
+</template>
+```
