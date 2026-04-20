@@ -27,3 +27,4 @@ src/
 - 單一檔案的 `<template>` 或 `<script>` 超過 300 行時，優先拆分子組件
 - .vue 檔案建立時順序為，`<script>`、`<template>`、`<styles>`
 - 使用 tanstack-query 寫法時，參考 ~/.claude/skills/tanstack-vue-query Skill
+- 撰寫 table 相關程式碼時，參考 ~/.claude/skills/tanstack-vue-data-table Skill
