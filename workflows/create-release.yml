@@ -1,0 +1,60 @@
+name: Create Release on Production Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - production
+
+jobs:
+  create-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate version tag
+        id: version
+        run: |
+          DATE=$(date +'%Y.%m.%d')
+          BASE_TAG="v${DATE}"
+
+          git fetch --tags
+
+          if ! git tag -l "${BASE_TAG}" | grep -q .; then
+            echo "tag=${BASE_TAG}" >> $GITHUB_OUTPUT
+          else
+            SUFFIX=1
+            while git tag -l "${BASE_TAG}.${SUFFIX}" | grep -q .; do
+              SUFFIX=$((SUFFIX + 1))
+            done
+            echo "tag=${BASE_TAG}.${SUFFIX}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create GitHub Release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tag = '${{ steps.version.outputs.tag }}';
+            const prTitle = context.payload.pull_request.title;
+            const prBody = context.payload.pull_request.body || '';
+            const mergeCommit = context.payload.pull_request.merge_commit_sha;
+
+            await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: tag,
+              name: `${tag} — ${prTitle}`,
+              body: prBody,
+              target_commitish: mergeCommit,
+              draft: false,
+              prerelease: false,
+            });
+
+            core.notice(`Release ${tag} created successfully`);
