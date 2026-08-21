@@ -1,0 +1,8 @@
+{
+  "name": "flutter",
+  "description": "Flutter development skill pack covering layout, state management, architecture, animation, performance, testing, theming, routing, databases, caching, concurrency, native interop, plugins, platform views, localization, accessibility, app size, HTTP/JSON, and environment setup (Linux/macOS/Windows).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jiangshuuu"
+  }
+}

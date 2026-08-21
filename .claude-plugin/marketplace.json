@@ -1,0 +1,38 @@
+{
+  "name": "my-skills",
+  "owner": {
+    "name": "Jiangshuuu"
+  },
+  "plugins": [
+    {
+      "name": "tanstack-vue-data-table",
+      "source": "./tanstack-vue-data-table",
+      "description": "shadcn-vue DataTable 完整指南。包含元件生成（/data-table 指令）、useVueTable 寫法、columns 定義、meta 型別、selection state 及使用規範。"
+    },
+    {
+      "name": "tanstack-vue-query",
+      "source": "./tanstack-vue-query",
+      "description": "使用 TanStack Vue Query（@tanstack/vue-query）時的規範，包含 useQuery、useMutation、useInfiniteQuery 的寫法、queryKeys 工廠函式、多響應式參數處理、Optimistic Update、以及狀態處理慣例"
+    },
+    {
+      "name": "react-coding-standards",
+      "source": "./react-coding-standards",
+      "description": "Enforce React coding standards and best practices. Use when writing React components, managing state, handling effects, or reviewing React code to ensure compliance with modern React patterns and conventions."
+    },
+    {
+      "name": "python-fastapi",
+      "source": "./python-fastapi",
+      "description": "FastAPI architecture and coding standards skills: a generic enterprise pseudo 3-tier architecture guide, plus project-specific coding conventions (type hints, async patterns, dependency injection, error handling) from the stock-lint-bot project."
+    },
+    {
+      "name": "flutter",
+      "source": "./flutter",
+      "description": "Flutter development skill pack covering layout, state management, architecture, animation, performance, testing, theming, routing, databases, caching, concurrency, native interop, plugins, platform views, localization, accessibility, app size, HTTP/JSON, and environment setup (Linux/macOS/Windows)."
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "source": "./ui-ux-pro-max",
+      "description": "UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Searchable design guideline database for building, reviewing, and improving UI/UX."
+    }
+  ]
+}

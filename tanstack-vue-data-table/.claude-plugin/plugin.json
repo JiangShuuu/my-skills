@@ -1,0 +1,8 @@
+{
+  "name": "tanstack-vue-data-table",
+  "description": "shadcn-vue DataTable 完整指南。包含元件生成（/data-table 指令）、useVueTable 寫法、columns 定義、meta 型別、selection state 及使用規範。",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jiangshuuu"
+  }
+}

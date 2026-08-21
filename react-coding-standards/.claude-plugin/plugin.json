@@ -1,0 +1,8 @@
+{
+  "name": "react-coding-standards",
+  "description": "Enforce React coding standards and best practices. Use when writing React components, managing state, handling effects, or reviewing React code to ensure compliance with modern React patterns and conventions.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jiangshuuu"
+  }
+}

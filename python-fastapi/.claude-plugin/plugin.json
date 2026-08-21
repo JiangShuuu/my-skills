@@ -1,0 +1,8 @@
+{
+  "name": "python-fastapi",
+  "description": "FastAPI architecture and coding standards skills: a generic enterprise pseudo 3-tier architecture guide, plus project-specific coding conventions (type hints, async patterns, dependency injection, error handling) from the stock-lint-bot project.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jiangshuuu"
+  }
+}

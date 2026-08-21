@@ -1,0 +1,8 @@
+{
+  "name": "tanstack-vue-query",
+  "description": "使用 TanStack Vue Query（@tanstack/vue-query）時的規範，包含 useQuery、useMutation、useInfiniteQuery 的寫法、queryKeys 工廠函式、多響應式參數處理、Optimistic Update、以及狀態處理慣例",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jiangshuuu"
+  }
+}
